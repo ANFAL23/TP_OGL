@@ -15,8 +15,8 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
-@Table(name="test")
-public class Bus implements Serializable {
+@Table(name="reserve")
+public class Reserve implements Serializable {
 	
 
 	private static final long serialVersionUID = 5362437768854142524L;
@@ -36,33 +36,53 @@ public class Bus implements Serializable {
 	@Column(name="goingto")
 	private String goingTo;
 	
+	@ManyToOne
+	@JoinColumn(name="username")
+	private User user;
 	
-	public Bus() {
-		
-	}
 
 	
+	public User getUser() {
+		return user;
+	}
 
 
 
 /*
 
-	public Bus(Date dateLeave, Date dateReturn, String leaveFrom, String goingTo) {
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+
+
+
+
+	public Reserve() {
+		this.user = new User();
+		
+	}
+
+*/
+
+
+
+	public Reserve(Date dateLeave, Date dateReturn, String leaveFrom, String goingTo, User user) {
 		this.dateLeave = dateLeave;
 		this.dateReturn = dateReturn;
 		this.leaveFrom = leaveFrom;
 		this.goingTo = goingTo;
-	
+		this.user = user;
 	}
 
-*/
+/*
 	public Date getDateLeave() {
 		return dateLeave;
 	}
 
 
 
-/*
+
 
 	public void setDateLeave(Date dateLeave) {
 		this.dateLeave = dateLeave;
@@ -70,14 +90,14 @@ public class Bus implements Serializable {
 
 
 
-*/
+
 
 	public Date getDateReturn() {
 		return dateReturn;
 	}
 
 
-/*
+
 
 
 	public void setDateReturn(Date dateReturn) {
@@ -87,13 +107,13 @@ public class Bus implements Serializable {
 
 
 
-*/
+
 	public String getLeaveFrom() {
 		return leaveFrom;
 	}
 
 
-/*
+
 
 
 	public void setLeaveFrom(String leaveFrom) {
@@ -102,23 +122,23 @@ public class Bus implements Serializable {
 
 
 
-*/
+
 
 	public String getGoingTo() {
 		return goingTo;
 	}
 
 
-/*
+
 
 
 	public void setGoingTo(String goingTo) {
 		this.goingTo = goingTo;
 	}
 
+
+
 */
-
-
 
 	@Override
 	public String toString() {
