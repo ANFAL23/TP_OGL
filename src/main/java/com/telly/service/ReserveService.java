@@ -18,9 +18,9 @@ public class ReserveService {
 	public void reserve(Reserve reserve){
 		reserveDao.reserve(reserve);
 	}
-/*
+
 	public List<Reserve> getReserves(String username){
 		return reserveDao.getReserve(username);
 	}
-*/
+
 }

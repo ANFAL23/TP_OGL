@@ -32,7 +32,7 @@ public class ReserveDao {
 	public void reserve(Reserve reserve) {
 		session().save(reserve);
 	}
-	/*
+
 	@SuppressWarnings("unchecked")
 	public List<Reserve> getReserve(String username) {
 		Criteria crit = session().createCriteria(Reserve.class);
@@ -41,5 +41,5 @@ public class ReserveDao {
 
 		return crit.list();
 	}
-*/
+
 }
