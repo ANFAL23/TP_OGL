@@ -31,31 +31,14 @@ public class User implements Serializable {
 	private boolean enabled = false;
 	private String authority;
 	
-	
-	public User() {
-		
-	}
-	
 
-	public User(String username, String password, String email, boolean enabled, String authority) {
-		this.username = username;
-		this.password = password;
-		this.email = email;
-		this.enabled = enabled;
-		this.authority = authority;
-	}
-
-
-	@Override
+     @Override
 	public String toString() {
 		return "User [username=" + username + ", password=" + password + ", email=" + email + ", enabled=" + enabled
 				+ ", authority=" + authority + "]";
 	}
 
 
-	public boolean isEnabled() {
-		return enabled;
-	}
 
 
 
@@ -79,7 +62,6 @@ public class User implements Serializable {
 		return username;
 	}
 
-
 	public void setUsername(String username) {
 		this.username = username;
 	}
@@ -93,21 +75,5 @@ public class User implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-
-	public String getEmail() {
-		return email;
-	}
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	
-
-
-	
-	
 
 }
