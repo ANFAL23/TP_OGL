@@ -2,6 +2,7 @@ package com.telly.controllers;
 import com.telly.dao.FormValidationGroup;
 import com.telly.dao.User;
 import com.telly.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,7 +16,8 @@ import java.security.Principal;
 @Controller
 public class UserController {
 
-
+	@Autowired
+	UserService userService;
 
 	@RequestMapping("/login")
 	public String showLogin() {
@@ -45,7 +47,7 @@ public class UserController {
 		user.setAuthority("ROLE_USER");
 		user.setEnabled(true);
 
-		UserService.create(user);
+		userService.create(user);
 
 		return "home";
 

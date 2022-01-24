@@ -12,7 +12,7 @@ public class UserService {
 	@Autowired
 	private UserDao userDao;
 	
-	public static void create(User user){
+	public void create(User user){
 		userDao.create(user);
 	}
 
